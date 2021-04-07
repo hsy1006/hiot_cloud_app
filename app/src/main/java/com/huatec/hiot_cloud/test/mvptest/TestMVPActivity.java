@@ -8,9 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.huatec.hiot_cloud.MainActivity;
 import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.test.mvptest.model.TestPresenter;
+import com.huatec.hiot_cloud.test.mvptest.model.TestView;
 import com.huatec.hiot_cloud.test.mvptest.model.User;
 
 public class TestMVPActivity extends AppCompatActivity implements TestView {

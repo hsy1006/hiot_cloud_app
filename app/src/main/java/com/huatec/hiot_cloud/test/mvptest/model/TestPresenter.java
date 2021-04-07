@@ -1,8 +1,6 @@
 package com.huatec.hiot_cloud.test.mvptest.model;
 
 
-import com.huatec.hiot_cloud.test.mvptest.TestView;
-
 public class TestPresenter {
 
     private TestView view;
