@@ -1,9 +1,6 @@
 package com.huatec.hiot_cloud.test.mvptest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,17 +8,21 @@ import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.base.BaseActivity;
-import com.huatec.hiot_cloud.test.mvptest.model.TestPresenter;
-import com.huatec.hiot_cloud.test.mvptest.model.TestView;
+import com.huatec.hiot_cloud.test.dagger2test.DaggerPresenterComponentT;
+import com.huatec.hiot_cloud.test.dagger2test.PresenterComponentT;
 import com.huatec.hiot_cloud.test.mvptest.model.User;
+
+import javax.inject.Inject;
 
 public class TestMVPActivity extends BaseActivity<TestView,TestPresenter> implements TestView {
 
-    private TestPresenter presenter;
+    @Inject
+    TestPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        presenter = new TestPresenter();
+
+        getComponent().inject(this);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_test_mvp);
@@ -49,6 +50,14 @@ public class TestMVPActivity extends BaseActivity<TestView,TestPresenter> implem
     @Override
     public void showMessage(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 创建注入器
+     * @return
+     */
+    public PresenterComponentT getComponent(){
+        return DaggerPresenterComponentT.builder().build();
     }
 
 }

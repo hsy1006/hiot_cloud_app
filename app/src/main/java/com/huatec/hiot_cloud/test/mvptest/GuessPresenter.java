@@ -1,19 +1,25 @@
-package com.huatec.hiot_cloud.test.mvptest.model;
+package com.huatec.hiot_cloud.test.mvptest;
 
-
-import android.widget.Toast;
 
 import com.huatec.hiot_cloud.base.BasePresenter;
-import com.huatec.hiot_cloud.test.mvptest.GuessActivity;
+import com.huatec.hiot_cloud.test.dagger2test.ThirdObj;
+import com.huatec.hiot_cloud.test.mvptest.model.Guess;
 
 import java.util.Random;
 
+import javax.inject.Inject;
+
 public class GuessPresenter extends BasePresenter<GuessView> {
 
+    @Inject
+    ThirdObj thirdObj;
+
+    @Inject
     public GuessPresenter() {
     }
 
     public void randomNum(Guess guess) {
+        thirdObj.thirdAction();
         Random random = new Random();
         int realNum = random.nextInt(100);
         guess.setRealNum(realNum);

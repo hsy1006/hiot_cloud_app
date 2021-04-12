@@ -1,7 +1,5 @@
 package com.huatec.hiot_cloud.test.mvptest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,21 +9,23 @@ import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.base.BaseActivity;
+import com.huatec.hiot_cloud.test.dagger2test.DaggerPresenterComponentG;
+import com.huatec.hiot_cloud.test.dagger2test.DaggerPresenterComponentT;
+import com.huatec.hiot_cloud.test.dagger2test.PresenterComponentG;
+import com.huatec.hiot_cloud.test.dagger2test.PresenterComponentT;
 import com.huatec.hiot_cloud.test.mvptest.model.Guess;
-import com.huatec.hiot_cloud.test.mvptest.model.GuessPresenter;
-import com.huatec.hiot_cloud.test.mvptest.model.GuessView;
-import com.huatec.hiot_cloud.test.mvptest.model.TestPresenter;
-import com.huatec.hiot_cloud.test.mvptest.model.TestView;
 
-import java.util.Random;
+import javax.inject.Inject;
 
 public class GuessActivity extends BaseActivity<GuessView,GuessPresenter> implements GuessView {
 
-    private GuessPresenter presenter;
+    @Inject
+    GuessPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        presenter = new GuessPresenter();
+
+        getComponent().inject(this);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_guess);
@@ -57,5 +57,13 @@ public class GuessActivity extends BaseActivity<GuessView,GuessPresenter> implem
     @Override
     public void showMessage(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 创建注入器
+     * @return
+     */
+    public PresenterComponentG getComponent(){
+        return DaggerPresenterComponentG.builder().build();
     }
 }
