@@ -25,7 +25,7 @@ public class GuessActivity extends BaseActivity<GuessView,GuessPresenter> implem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        getComponent().inject(this);
+        getActivityComponent().inject(this);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_guess);
@@ -59,11 +59,4 @@ public class GuessActivity extends BaseActivity<GuessView,GuessPresenter> implem
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
-    /**
-     * 创建注入器
-     * @return
-     */
-    public PresenterComponentG getComponent(){
-        return DaggerPresenterComponentG.builder().build();
-    }
 }
