@@ -24,10 +24,7 @@ public class GuessActivity extends BaseActivity<GuessView,GuessPresenter> implem
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        getActivityComponent().inject(this);
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_guess);
         Button btnRandom = findViewById(R.id.btn_random);
         Button btnMakeSure = findViewById(R.id.btn_makesure);
@@ -52,6 +49,11 @@ public class GuessActivity extends BaseActivity<GuessView,GuessPresenter> implem
     @Override
     public GuessPresenter createPresenter() {
         return presenter;
+    }
+
+    @Override
+    public void injectIndependies() {
+        getActivityComponent().inject(this);
     }
 
     @Override
