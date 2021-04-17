@@ -19,7 +19,12 @@
         <activity android:name=".test.mvptest.TestMVPActivity">
 
         </activity>
-        <activity android:name=".ui.main.MainActivity" >
+        <activity android:name=".ui.main.MainActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:launchMode="singleTask"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
