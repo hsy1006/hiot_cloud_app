@@ -8,11 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
-import com.huatec.hiot_cloud.base.BaseActivity;
-import com.huatec.hiot_cloud.test.dagger2test.DaggerPresenterComponentG;
-import com.huatec.hiot_cloud.test.dagger2test.DaggerPresenterComponentT;
-import com.huatec.hiot_cloud.test.dagger2test.PresenterComponentG;
-import com.huatec.hiot_cloud.test.dagger2test.PresenterComponentT;
+import com.huatec.hiot_cloud.ui.base.BaseActivity;
 import com.huatec.hiot_cloud.test.mvptest.model.Guess;
 
 import javax.inject.Inject;

@@ -24,4 +24,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="登录" />
+
+    <LinearLayout
+        android:id="@+id/container_fragment_test"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
 </LinearLayout>
