@@ -1,4 +1,4 @@
-package com.huatec.hiot_cloud.ui;
+package com.huatec.hiot_cloud.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.huatec.hiot_cloud.R;
-import com.huatec.hiot_cloud.ui.main.MainActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
