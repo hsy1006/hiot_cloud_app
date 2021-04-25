@@ -7,6 +7,12 @@
     android:orientation="vertical"
     tools:context=".test.lifecycletest.TestLifeCycleActivity">
 
+    <TextView
+        android:text="生命周期测试"
+        android:textSize="50dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btn_start_new"
         android:layout_width="match_parent"

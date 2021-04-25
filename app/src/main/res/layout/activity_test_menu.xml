@@ -5,38 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".test.networktest.TestRetrofitActivity">
-
+    tools:context=".test.TestMenuActivity">
 
     <TextView
+        android:text="测试模块菜单"
         android:textSize="50dp"
-        android:text="Retrofit测试"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btn_retrofit_enqueue"
-        android:text="enqueue"
+        android:id="@+id/btn_test_mvp"
+        android:text="MVP测试"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btn_retrofit_login"
-        android:text="登录"
+        android:id="@+id/btn_test_lifecycle"
+        android:text="生命周期测试"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btn_retrofit_userinfo"
-        android:text="用户信息"
+        android:id="@+id/btn_test_fragment"
+        android:text="fragment测试"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btn_retrofit_update_email"
-        android:text="修改邮箱"
+        android:id="@+id/btn_test_okhttp"
+        android:text="okhttp测试"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btn_retrofit_register"
-        android:text="注册"
+        android:id="@+id/btn_test_retrofit"
+        android:text="retrofit测试"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
 </LinearLayout>
