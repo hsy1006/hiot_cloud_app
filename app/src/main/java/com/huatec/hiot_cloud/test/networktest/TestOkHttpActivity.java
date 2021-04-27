@@ -31,7 +31,7 @@ import okhttp3.ResponseBody;
  */
 public class TestOkHttpActivity extends AppCompatActivity {
 
-//    private static final String baseUrl = "http://www.baidu.com/";
+    private static final String baseUrl2 = "http://www.baidu.com/";
     private static final String baseUrl = "http://114.67.88.191:8080";
     private static final String TAG = "TestOkHttpActivity";
 
@@ -73,7 +73,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
         btnGetUsetinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getUserInfo("85f6ffa4a846439286c09a6aca505aa3_f151814f10d944f98e12b5358143ae54_use");
+                getUserInfo("85f6ffa4a846439286c09a6aca505aa3_4266ec0eac1f4ba09876b0417014d748_use");
             }
         });
 
@@ -82,7 +82,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
         btnUpdateEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateEmail("85f6ffa4a846439286c09a6aca505aa3_f151814f10d944f98e12b5358143ae54_use",
+                updateEmail("85f6ffa4a846439286c09a6aca505aa3_4266ec0eac1f4ba09876b0417014d748_use",
                         "1281068244email@qq.com");
             }
         });
@@ -139,7 +139,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
             public void run() {
                 super.run();
                 OkHttpClient okHttpClient = new OkHttpClient();
-                Request request = new Request.Builder().url(baseUrl).build();
+                Request request = new Request.Builder().url(baseUrl2).build();
                 try {
                     Response response = okHttpClient.newCall(request).execute();
                     Log.d(TAG, "run: " + response.body().string());
@@ -155,7 +155,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
      */
     private void testEnqueue() {
         OkHttpClient okHttpClient = new OkHttpClient();
-        Request request = new Request.Builder().url(baseUrl).build();
+        Request request = new Request.Builder().url(baseUrl2).build();
         callEnqueue(okHttpClient, request);
     }
 

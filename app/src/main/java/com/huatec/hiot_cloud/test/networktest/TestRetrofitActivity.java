@@ -29,6 +29,8 @@ public class TestRetrofitActivity extends AppCompatActivity {
     private static final String TAG = "TestRetrofitActivity";
     private Retrofit retrofit;
     private TestRetrofitService service;
+    private Retrofit retrofit2;
+    private TestRetrofitService service2;
     private Gson gson = new Gson();
     private EditText etToken;
     private TextView tvUserName;
@@ -63,6 +65,7 @@ public class TestRetrofitActivity extends AppCompatActivity {
 
         //创建retrofit和setvice对象
         createRetrofit();
+        createRetrofit2();
 
         //百度
         Button btnTest = findViewById(R.id.btn_retrofit_enqueue);
@@ -191,7 +194,7 @@ public class TestRetrofitActivity extends AppCompatActivity {
      * 百度
      */
     private void test() {
-        Call<ResponseBody> call = service.test();
+        Call<ResponseBody> call = service2.test();
         callEnqueue(call);
     }
 
@@ -281,9 +284,17 @@ public class TestRetrofitActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * 创建retrofit
+     */
     private void createRetrofit(){
         retrofit = new Retrofit.Builder().baseUrl(TestRetrofitService.baseUrl)
                 .addConverterFactory(GsonConverterFactory.create()).build();
         service = retrofit.create(TestRetrofitService.class);
+    }
+    private void createRetrofit2(){
+        retrofit2 = new Retrofit.Builder().baseUrl(TestRetrofitService.baseUrl2)
+                .addConverterFactory(GsonConverterFactory.create()).build();
+        service2 = retrofit2.create(TestRetrofitService.class);
     }
 }

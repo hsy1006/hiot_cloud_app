@@ -15,34 +15,72 @@ import retrofit2.http.Query;
  * retrofit service接口
  */
 public interface TestRetrofitService {
-//    public static final String baseUrl = "http://www.baidu.com/";
+    public static final String baseUrl2 = "http://www.baidu.com/";
     public static final String baseUrl = "http://114.67.88.191:8080/";
 
+    /**
+     * 百度
+     * @return
+     */
     @GET("/")
     Call<ResponseBody> test();
 
+    /**
+     * 登录方式1
+     * @param userName
+     * @param password
+     * @param loginCode
+     * @return
+     */
     @POST("/auth/login")
     Call<ResponseBody> login(@Query("username")String userName,
                              @Query("password")String password,
                              @Query("loginCode")String loginCode);
 
+    /**
+     * 登录方式1
+     * @param userName
+     * @param password
+     * @param loginCode
+     * @return
+     */
     @POST("/auth/login")
     @FormUrlEncoded
     Call<ResponseBody> login2(@Field("username") String userName,
                               @Field("password")String password,
                               @Field("loginCode")String loginCode);
 
+    /**
+     * 用户信息
+     * @param authorization
+     * @return
+     */
     @GET("/user/one")
     Call<ResponseBody> getUserInfo(@Header("Authorization")String authorization);
 
-    //Retrofit和gson联合自动解析
+    /**
+     * 用户信息（Retrofit和gson联合自动解析）
+     * @param authorization
+     * @return
+     */
     @GET("/user/one")
     Call<ResultBase<UserBean>> getUserInfo2(@Header("Authorization")String authorization);
 
+    /**
+     * 修改邮箱
+     * @param email
+     * @param authorization
+     * @return
+     */
     @PUT("/user/email")
     Call<ResponseBody> updateEmail(@Query("email")String email,
                                    @Header("Authorization")String authorization);
 
+    /**
+     * 注册
+     * @param userBean
+     * @return
+     */
     @POST("/user/register")
     Call<ResponseBody> register(@Body UserBean userBean);
 }

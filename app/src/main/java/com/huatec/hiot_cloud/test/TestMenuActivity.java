@@ -14,6 +14,7 @@ import com.huatec.hiot_cloud.test.mvptest.TestMVPActivity;
 import com.huatec.hiot_cloud.test.networktest.TestGsonActivity;
 import com.huatec.hiot_cloud.test.networktest.TestOkHttpActivity;
 import com.huatec.hiot_cloud.test.networktest.TestRetrofitActivity;
+import com.huatec.hiot_cloud.test.networktest.TestRxJavaActivity;
 
 public class TestMenuActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class TestMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_menu);
 
-        //MVP
+        //MVP测试模块
         Button btnTestMvp = findViewById(R.id.btn_test_mvp);
         btnTestMvp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,7 +33,7 @@ public class TestMenuActivity extends AppCompatActivity {
             }
         });
 
-        //lifecycle
+        //lifecycle测试模块
         Button btnTestLifeCycle = findViewById(R.id.btn_test_lifecycle);
         btnTestLifeCycle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +42,7 @@ public class TestMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //fragment
+        //fragment测试模块
         Button btnTestFragment = findViewById(R.id.btn_test_fragment);
         btnTestFragment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +51,7 @@ public class TestMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //okhttp
+        //okhttp测试模块
         Button btnTestOkHttp = findViewById(R.id.btn_test_okhttp);
         btnTestOkHttp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +60,7 @@ public class TestMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //retrofit
+        //retrofit测试模块
         Button btnTestRetrofit = findViewById(R.id.btn_test_retrofit);
         btnTestRetrofit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,12 +69,21 @@ public class TestMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //gson
+        //gson测试模块
         Button btnTestGson = findViewById(R.id.btn_test_gson);
         btnTestGson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TestMenuActivity.this, TestGsonActivity.class);
+                startActivity(intent);
+            }
+        });
+        //rxjava测试模块
+        Button btnTestRxJava = findViewById(R.id.btn_test_rxjava);
+        btnTestRxJava.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TestMenuActivity.this, TestRxJavaActivity.class);
                 startActivity(intent);
             }
         });
