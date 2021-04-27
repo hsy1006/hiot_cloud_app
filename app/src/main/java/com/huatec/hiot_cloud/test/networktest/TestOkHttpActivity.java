@@ -6,12 +6,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.huatec.hiot_cloud.R;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -19,6 +24,7 @@ import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 /**
  * okhttp框架测试类
@@ -33,6 +39,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_ok_http);
+
 
         //execute方法测试
         Button btnExecute = findViewById(R.id.btn_okhttp_execute);
@@ -66,7 +73,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
         btnGetUsetinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getUserInfo("85f6ffa4a846439286c09a6aca505aa3_39d8f0d5f7cd4246b8a156f2d455163f_use");
+                getUserInfo("85f6ffa4a846439286c09a6aca505aa3_f151814f10d944f98e12b5358143ae54_use");
             }
         });
 
@@ -75,8 +82,8 @@ public class TestOkHttpActivity extends AppCompatActivity {
         btnUpdateEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateEmail("85f6ffa4a846439286c09a6aca505aa3_39d8f0d5f7cd4246b8a156f2d455163f_use",
-                        "1281068244@qq.com");
+                updateEmail("85f6ffa4a846439286c09a6aca505aa3_f151814f10d944f98e12b5358143ae54_use",
+                        "1281068244email@qq.com");
             }
         });
     }
@@ -170,4 +177,5 @@ public class TestOkHttpActivity extends AppCompatActivity {
             }
         });
     }
+
 }

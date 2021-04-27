@@ -11,6 +11,7 @@ import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.test.lifecycletest.TestLifeCycleActivity;
 import com.huatec.hiot_cloud.test.mvptest.GuessActivity;
 import com.huatec.hiot_cloud.test.mvptest.TestMVPActivity;
+import com.huatec.hiot_cloud.test.networktest.TestGsonActivity;
 import com.huatec.hiot_cloud.test.networktest.TestOkHttpActivity;
 import com.huatec.hiot_cloud.test.networktest.TestRetrofitActivity;
 
@@ -64,6 +65,15 @@ public class TestMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TestMenuActivity.this, TestRetrofitActivity.class);
+                startActivity(intent);
+            }
+        });
+        //gson
+        Button btnTestGson = findViewById(R.id.btn_test_gson);
+        btnTestGson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TestMenuActivity.this, TestGsonActivity.class);
                 startActivity(intent);
             }
         });

@@ -12,11 +12,11 @@ public class UserBean implements Serializable {
      */
     private String username;
     /**
-     * 用户邮箱
+     * 邮箱
      */
     private String email;
     /**
-     * 用户密码
+     * 密码
      */
     private String password;
     /**
