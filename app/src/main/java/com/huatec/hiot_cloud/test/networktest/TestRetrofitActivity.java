@@ -239,9 +239,11 @@ public class TestRetrofitActivity extends AppCompatActivity {
                         tvUserType.setText("用户类型：" + usertype);
                         String str = String.format("用户名：%s，密码：%s，邮箱：%s，用户类型：%s",
                                 userBean.getUsername(),userBean.getPassword(),userBean.getEmail(),userBean.getUserType());
+                        Log.d(TAG, "onResponse: " + resultBase.getMsg());
                         Toast.makeText(TestRetrofitActivity.this, str, Toast.LENGTH_SHORT).show();
                     }
                     else if (resultBase !=null && resultBase.getMsg() != null){
+                        Log.d(TAG, "onResponse: " + resultBase.getMsg());
                         Toast.makeText(TestRetrofitActivity.this, resultBase.getMsg(), Toast.LENGTH_SHORT).show();
                     }
                 } catch (IOException e) {
@@ -268,9 +270,11 @@ public class TestRetrofitActivity extends AppCompatActivity {
                     if (loginResultDTO != null && loginResultDTO.getData() != null){
                         String token = loginResultDTO.getData().getTokenValue();
                         etToken.setText(token);
+                        Log.d(TAG, "onResponse: " + loginResultDTO.getMsg());
                     }
                     else if (loginResultDTO !=null && loginResultDTO.getMsg() != null){
                         Toast.makeText(TestRetrofitActivity.this, loginResultDTO.getMsg(), Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "onResponse: " + loginResultDTO.getMsg());
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "onResponse: " + e.getMessage(), e);

@@ -35,8 +35,7 @@ public class TestRxJavaActivity extends AppCompatActivity {
     private EditText etRegisterPassword;
     private EditText etRegisterEmail;
     private EditText etRegisterUserType;
-
-    @Override
+    private EditText etChangePassword;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_rx_java);
@@ -50,6 +49,8 @@ public class TestRxJavaActivity extends AppCompatActivity {
         etRegisterPassword = findViewById(R.id.et_rxjava_regidter_password);
         etRegisterEmail = findViewById(R.id.et_rxjava_regidter_email);
         etRegisterUserType = findViewById(R.id.et_rxjava_regidter_user_type);
+        //取到新密码
+        etChangePassword = findViewById(R.id.et_rxjava_password);
 
         //创建retrofit
         createRetrofit();
@@ -90,6 +91,57 @@ public class TestRxJavaActivity extends AppCompatActivity {
             }
         });
 
+        //修改密码
+        Button btnUpdataPassword = findViewById(R.id.btn_rxjava_update_password);
+        btnUpdataPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updataPassword("abc123456",etChangePassword.getText().toString(),etChangePassword.getText().toString(),etToken.getText().toString());
+            }
+        });
+
+    }
+
+    /**
+     * 修改密码
+     * @param oldpassword
+     * @param newpassword
+     * @param confirmpassword
+     * @param authorization
+     */
+    private void updataPassword(String oldpassword, String newpassword, String confirmpassword, String authorization) {
+        Observable<ResultBase<String>> observable = service.updatePassword(oldpassword,newpassword,confirmpassword,authorization);
+        observable.observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<ResultBase<String>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(ResultBase<String> resultBase) {
+                        if (resultBase != null && resultBase.getData() != null){
+                            Toast.makeText(TestRxJavaActivity.this, resultBase.getMsg(), Toast.LENGTH_SHORT).show();
+                        }
+                        else if (resultBase != null && !TextUtils.isEmpty(resultBase.getMsg())){
+                            Toast.makeText(TestRxJavaActivity.this, resultBase.getMsg(), Toast.LENGTH_SHORT).show();
+                        }
+                        Log.d(TAG, "onNext: " + resultBase.getMsg());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e(TAG, "onError: " + e.getMessage(),e);
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
     }
 
     /**
@@ -118,6 +170,7 @@ public class TestRxJavaActivity extends AppCompatActivity {
                         else if (resultBase != null && !TextUtils.isEmpty(resultBase.getMsg())){
                             Toast.makeText(TestRxJavaActivity.this, resultBase.getMsg(), Toast.LENGTH_SHORT).show();
                         }
+                        Log.d(TAG, "onNext: " + resultBase.getMsg());
                     }
 
                     @Override
@@ -156,6 +209,7 @@ public class TestRxJavaActivity extends AppCompatActivity {
                         else if (resultBase != null && !TextUtils.isEmpty(resultBase.getMsg())){
                             Toast.makeText(TestRxJavaActivity.this, resultBase.getMsg(), Toast.LENGTH_SHORT).show();
                         }
+                        Log.d(TAG, "onNext: " + resultBase.getMsg());
                     }
 
                     @Override
@@ -194,6 +248,7 @@ public class TestRxJavaActivity extends AppCompatActivity {
                         else if (resultBase != null && !TextUtils.isEmpty(resultBase.getMsg())){
                             Toast.makeText(TestRxJavaActivity.this, resultBase.getMsg(), Toast.LENGTH_SHORT).show();
                         }
+                        Log.d(TAG, "onNext: " + resultBase.getMsg());
                     }
 
                     @Override

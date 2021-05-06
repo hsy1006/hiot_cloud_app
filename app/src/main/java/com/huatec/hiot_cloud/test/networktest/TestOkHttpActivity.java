@@ -73,7 +73,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
         btnGetUsetinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getUserInfo("85f6ffa4a846439286c09a6aca505aa3_4266ec0eac1f4ba09876b0417014d748_use");
+                getUserInfo("85f6ffa4a846439286c09a6aca505aa3_ca2dd454fa814b82a0ea0579d07446af_use");
             }
         });
 
@@ -82,7 +82,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
         btnUpdateEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateEmail("85f6ffa4a846439286c09a6aca505aa3_4266ec0eac1f4ba09876b0417014d748_use",
+                updateEmail("85f6ffa4a846439286c09a6aca505aa3_ca2dd454fa814b82a0ea0579d07446af_use",
                         "1281068244email@qq.com");
             }
         });
