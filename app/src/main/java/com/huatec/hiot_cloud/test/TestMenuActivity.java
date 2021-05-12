@@ -1,13 +1,14 @@
 package com.huatec.hiot_cloud.test;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.huatec.hiot_cloud.R;
+import com.huatec.hiot_cloud.test.glidetest.TestGlideActivity;
 import com.huatec.hiot_cloud.test.lifecycletest.TestLifeCycleActivity;
 import com.huatec.hiot_cloud.test.mvptest.GuessActivity;
 import com.huatec.hiot_cloud.test.mvptest.TestMVPActivity;
@@ -95,6 +96,16 @@ public class TestMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TestMenuActivity.this, TestNetworkPackActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //glide测试模块跳转
+        Button btnTestGlide = findViewById(R.id.btn_test_glide);
+        btnTestGlide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TestMenuActivity.this, TestGlideActivity.class);
                 startActivity(intent);
             }
         });
