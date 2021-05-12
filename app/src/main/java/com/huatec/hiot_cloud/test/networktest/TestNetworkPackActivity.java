@@ -1,9 +1,6 @@
 package com.huatec.hiot_cloud.test.networktest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,18 +9,10 @@ import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.data.DataManager;
-import com.huatec.hiot_cloud.data.NetworkService;
 import com.huatec.hiot_cloud.ui.base.BaseActivity;
 import com.huatec.hiot_cloud.ui.base.BasePresenter;
-import com.huatec.hiot_cloud.utils.Constans;
 
 import javax.inject.Inject;
-
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
-import retrofit2.http.Query;
 
 /**
  * 网络封装层测试类
@@ -126,8 +115,8 @@ public class TestNetworkPackActivity extends BaseActivity implements TestNetwork
      * @param userName
      * @param password
      */
-    private void login(String userName, String password) {
-
+//    private void login(String userName, String password) {
+//
 //        dataManager.login(userName,password)
 //                .subscribeOn(Schedulers.io())
 //                .observeOn(AndroidSchedulers.mainThread())
@@ -161,7 +150,7 @@ public class TestNetworkPackActivity extends BaseActivity implements TestNetwork
 //
 //                    }
 //                });
-    }
+//    }
 
     @Override
     public void showToken(String token) {
