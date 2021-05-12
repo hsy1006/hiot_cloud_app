@@ -3,86 +3,81 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <LinearLayout
+    android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".test.networktest.TestRxJavaActivity">
-
+        tools:context=".test.networktest.TestNetworkPackActivity">
 
         <TextView
             android:textSize="50dp"
-            android:text="RxJava测试"
+            android:text="网络封装测试"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
         <EditText
-            android:id="@+id/et_rxjava_login_password"
+            android:id="@+id/et_network_pack_login_password"
             android:hint="请输入用户密码"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/btn_rxjava_login"
+            android:id="@+id/btn_network_pack_login"
             android:text="登录"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/et_rxjava_token"
+            android:id="@+id/et_network_pack_token"
             android:hint="用户token"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/btn_rxjava_userinfo"
+            android:id="@+id/btn_network_pack_userinfo"
             android:text="用户信息"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/et_rxjava_change_email"
+            android:id="@+id/et_network_pack_change_email"
             android:hint="请输入新邮箱"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/btn_rxjava_update_email"
+            android:id="@+id/btn_network_pack_update_email"
             android:text="修改邮箱"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/et_rxjava_regidter_user_name"
+            android:id="@+id/et_network_pack_regidter_user_name"
             android:hint="请输入用户名"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/et_rxjava_regidter_password"
+            android:id="@+id/et_network_pack_regidter_password"
             android:hint="请输入密码"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/et_rxjava_regidter_email"
+            android:id="@+id/et_network_pack_regidter_email"
             android:hint="请输入邮箱"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <EditText
-            android:id="@+id/et_rxjava_regidter_user_type"
-            android:hint="请输入用户类型，默认为“1”"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/btn_rxjava_register"
+            android:id="@+id/btn_network_pack_register"
             android:text="注册"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/et_rxjava_password"
+            android:id="@+id/et_network_pack_password"
             android:hint="请输入新密码"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/btn_rxjava_update_password"
+            android:id="@+id/btn_network_pack_update_password"
             android:text="修改密码"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </ScrollView>

@@ -20,7 +20,7 @@ import retrofit2.http.Query;
 /**
  * 网络请求接口
  */
-public interface NetService {
+public interface NetworkService {
 //    public static final String baseUrl = "http://www.baidu.com/";
     public static final String baseUrl = "http://114.67.88.191:8080/";
 
@@ -51,8 +51,8 @@ public interface NetService {
      * @return
      */
     @PUT("/user/email")
-    Observable<ResultBase<String>> updateEmail(@Query("email")String email,
-                                   @Header("Authorization")String authorization);
+    Observable<ResultBase<String>> updateEmail(@Header("Authorization")String authorization,
+                                               @Query("email")String email);
 
     /**
      * 注册

@@ -11,7 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
-import com.huatec.hiot_cloud.data.NetService;
+import com.huatec.hiot_cloud.data.NetworkService;
+import com.huatec.hiot_cloud.utils.Constans;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -28,7 +29,8 @@ public class TestRxJavaActivity extends AppCompatActivity {
 
     private Retrofit retrofit;
 
-    private NetService service;
+    private NetworkService service;
+    private EditText etLoginPassword;
     private EditText etToken;
     private EditText etChangeEmail;
     private EditText etRegisterUserName;
@@ -36,10 +38,13 @@ public class TestRxJavaActivity extends AppCompatActivity {
     private EditText etRegisterEmail;
     private EditText etRegisterUserType;
     private EditText etChangePassword;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_rx_java);
 
+        //取到用户登录密码
+        etLoginPassword = findViewById(R.id.et_rxjava_login_password);
         //取到edit_token
         etToken = findViewById(R.id.et_rxjava_token);
         //取到新邮箱
@@ -60,7 +65,7 @@ public class TestRxJavaActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login("hsy", "abc123456", "app");
+                login("hsy", etLoginPassword.getText().toString(), Constans.LOGIN_CODE_APP);
             }
         });
 
@@ -96,7 +101,7 @@ public class TestRxJavaActivity extends AppCompatActivity {
         btnUpdataPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updataPassword("abc123456",etChangePassword.getText().toString(),etChangePassword.getText().toString(),etToken.getText().toString());
+                updataPassword(etLoginPassword.getText().toString(),etChangePassword.getText().toString(),etChangePassword.getText().toString(),etToken.getText().toString());
             }
         });
 
@@ -192,7 +197,7 @@ public class TestRxJavaActivity extends AppCompatActivity {
      * @param email
      */
     private void updataEmail(String authorization, String email) {
-        Observable<ResultBase<String>> observable = service.updateEmail(email,authorization);
+        Observable<ResultBase<String>> observable = service.updateEmail(authorization,email);
         observable.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<ResultBase<String>>() {
@@ -284,7 +289,10 @@ public class TestRxJavaActivity extends AppCompatActivity {
                         if (resultBase != null && resultBase.getData() != null){
                             LoginResultDTO loginResult = resultBase.getData();
                             etToken.setText(loginResult.getTokenValue());
-                            Log.d(TAG, "onNext: " + loginResult.getTokenValue());
+                            Log.d(TAG, "onNext: " + resultBase.getMsg());
+                        }
+                        else if (resultBase != null && !TextUtils.isEmpty(resultBase.getMsg())){
+                            Log.d(TAG, "onNext: " + resultBase.getMsg());
                         }
                     }
 
@@ -304,10 +312,10 @@ public class TestRxJavaActivity extends AppCompatActivity {
      * 创建retrofit
      */
     private void createRetrofit(){
-        retrofit = new Retrofit.Builder().baseUrl(NetService.baseUrl)
+        retrofit = new Retrofit.Builder().baseUrl(NetworkService.baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
-        service = retrofit.create(NetService.class);
+        service = retrofit.create(NetworkService.class);
     }
 }

@@ -20,13 +20,21 @@ import android.content.Context;
 
 
 //import com.huatec.hiot_cloud.App;
+import com.google.gson.Gson;
 import com.huatec.hiot_cloud.App;
+import com.huatec.hiot_cloud.data.NetworkService;
 import com.huatec.hiot_cloud.injection.ApplicationContext;
+
+import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Dagger module that provides objects which will live during the application lifecycle.
@@ -50,5 +58,39 @@ public class ApplicationModule {
     Context provideApplicationContext() {
         return this.application;
     }
+
+    //提供OkHttpClient
+    @Provides
+    @Singleton
+    OkHttpClient provideOkHttpClient(){
+        return new OkHttpClient();
+    }
+
+    //提供Retrofit
+    @Provides
+    @Singleton
+    Retrofit provideRetrofit(OkHttpClient okHttpClient){
+        return new Retrofit.Builder()
+                .baseUrl(NetworkService.baseUrl)
+                .client(okHttpClient)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build();
+    }
+
+    //提供provideNetworkService
+    @Provides
+    @Singleton
+    NetworkService provideNetworkService(Retrofit retrofit){
+        return retrofit.create(NetworkService.class);
+    }
+
+    //提供provideGson
+    @Provides
+    @Singleton
+    Gson provideGson(){
+        return new Gson();
+    }
+
 
 }

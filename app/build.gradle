@@ -51,4 +51,12 @@ dependencies {
     //使用gson解析json
     //https://github.com/google/gson
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    //用来打印okhttp请求日志
+    implementation("com.squareup.okhttp3:logging-interceptor:4.2.0")
+
+    //图片加载框架
+    //https://github.com/bumptech/glide
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
 }

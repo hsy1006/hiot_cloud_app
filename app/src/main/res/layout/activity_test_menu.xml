@@ -48,5 +48,10 @@
         android:text="rxjava测试"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_test_network_pack"
+        android:text="网络封装测试"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
