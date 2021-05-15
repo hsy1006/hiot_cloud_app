@@ -5,4 +5,10 @@ package com.huatec.hiot_cloud.ui.base;
  */
 public interface BaseView {
 
+    /**
+     * 吐司消息
+     *
+     * @param message
+     */
+    void showMessage(String message);
 }

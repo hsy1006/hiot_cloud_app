@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.huatec.hiot_cloud.R;
+import com.huatec.hiot_cloud.ui.login.LoginActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -21,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
             if(msg.what == HANDLER_MSG_OPEN_NEW){
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
