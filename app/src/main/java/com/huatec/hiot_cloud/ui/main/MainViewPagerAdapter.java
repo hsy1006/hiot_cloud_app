@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.huatec.hiot_cloud.utils.Constans;
+import com.huatec.hiot_cloud.utils.Constants;
 
 /**
  * viewpager适配器
@@ -21,19 +21,19 @@ class MainViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         Fragment fragment = null;
         switch (position) {
-            case Constans.MAIN_VIEWPAGER_INDEX_MESSAGE:
+            case Constants.MAIN_VIEWPAGER_INDEX_MESSAGE:
                 //创建message的fragment
                 fragment = MessageFragment.newInstance();
                 break;
-            case Constans.MAIN_VIEWPAGER_INDEX_EQUIPMENT:
+            case Constants.MAIN_VIEWPAGER_INDEX_EQUIPMENT:
                 //创建equipment的fragment
                 fragment = EquipmentFragment.newInstance();
                 break;
-            case Constans.MAIN_VIEWPAGER_INDEX_SCENE:
+            case Constants.MAIN_VIEWPAGER_INDEX_SCENE:
                 //创建scene的fragment
                 fragment = SceneFragment.newInstance();
                 break;
-            case Constans.MAIN_VIEWPAGER_INDEX_MINE:
+            case Constants.MAIN_VIEWPAGER_INDEX_MINE:
                 //创建mine的fragment
                 fragment = MineFragment.newInstance();
                 break;
@@ -44,6 +44,6 @@ class MainViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return Constans.MAIN_FRAGMENT_COUNT;
+        return Constants.MAIN_FRAGMENT_COUNT;
     }
 }

@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.data.NetworkService;
-import com.huatec.hiot_cloud.utils.Constans;
+import com.huatec.hiot_cloud.utils.Constants;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -65,7 +65,7 @@ public class TestRxJavaActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login("hsy", etLoginPassword.getText().toString(), Constans.LOGIN_CODE_APP);
+                login("hsy", etLoginPassword.getText().toString(), Constants.LOGIN_CODE_APP);
             }
         });
 

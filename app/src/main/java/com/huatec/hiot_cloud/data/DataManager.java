@@ -3,15 +3,11 @@ package com.huatec.hiot_cloud.data;
 import com.huatec.hiot_cloud.test.networktest.LoginResultDTO;
 import com.huatec.hiot_cloud.test.networktest.ResultBase;
 import com.huatec.hiot_cloud.test.networktest.UserBean;
-import com.huatec.hiot_cloud.utils.Constans;
+import com.huatec.hiot_cloud.utils.Constants;
 
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * 网络请求封装类
@@ -32,7 +28,7 @@ public class DataManager {
      * @return
      */
     public Observable<ResultBase<LoginResultDTO>> login(String userName, String password) {
-        return service.login(userName,password, Constans.LOGIN_CODE_APP);
+        return service.login(userName,password, Constants.LOGIN_CODE_APP);
     }
 
     /**
@@ -66,7 +62,7 @@ public class DataManager {
         userBean.setUsername(userName);
         userBean.setEmail(email);
         userBean.setPassword(password);
-        userBean.setUserType(Constans.USER_TYPE_NORMAI);
+        userBean.setUserType(Constants.USER_TYPE_NORMAI);
         return  service.register(userBean);
     }
 
