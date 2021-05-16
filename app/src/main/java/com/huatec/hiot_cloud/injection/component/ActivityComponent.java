@@ -24,6 +24,7 @@ import com.huatec.hiot_cloud.test.networktest.TestNetworkPackActivity;
 import com.huatec.hiot_cloud.ui.login.LoginActivity;
 import com.huatec.hiot_cloud.ui.main.MainActivity;
 import com.huatec.hiot_cloud.ui.main.SplashActivity;
+import com.huatec.hiot_cloud.ui.register.RegisterActivity;
 
 import dagger.Component;
 
@@ -48,6 +49,9 @@ public interface ActivityComponent {
     void inject(LoginActivity loginActivity);
 
     void inject(SplashActivity splashActivity);
+
+    void inject(RegisterActivity registerActivity);
+
 
     @Component.Builder
     interface ActivityComponentBuilder {
