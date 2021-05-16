@@ -32,4 +32,8 @@ public class Constants {
      * 用户类型
      */
     public static final String USER_TYPE_NORMAI = "1";
+    /**
+     * 服务端返回消息状态属性成功
+     */
+    public static final int MSG_STATUS_SUCESS = 1;
 }

@@ -6,6 +6,7 @@ import com.huatec.hiot_cloud.injection.component.ApplicationComponent;
 import com.huatec.hiot_cloud.injection.component.DaggerApplicationComponent;
 import com.huatec.hiot_cloud.injection.module.ApplicationModule;
 
+
 /**
  * 所有程序的入口
  */
