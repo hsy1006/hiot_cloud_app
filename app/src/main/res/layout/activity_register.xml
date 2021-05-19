@@ -17,20 +17,20 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tiptet_user_name"
-        android:hint="请输入用户名称"
+        android:hint="@string/hint_enter_user_name"
         android:drawableLeft="@drawable/icon_user"
         style="@style/loginEditTextStyle" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tiptet_email"
-        android:hint="请输入电子邮箱"
+        android:hint="@string/hint_enter_email"
         android:drawableLeft="@drawable/icon_email"
         style="@style/loginEditTextStyle" />
 
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tiptet_password"
-        android:hint="请输入密码"
+        android:hint="@string/hint_enter_password"
         android:drawableLeft="@drawable/icon_password"
         android:inputType="textPassword"
         style="@style/loginEditTextStyle" />
@@ -54,7 +54,7 @@
         android:clickable="false"
         android:gravity="center"
         android:paddingBottom="10dp"
-        android:text="已有账号？直接登录"
+        android:text="@string/login_direc"
         android:textColor="#05eeff"
         android:textSize="16sp" />
 

@@ -47,21 +47,19 @@ public class DataManager {
 
     /**
      * 用户信息
-     * @param authorization
      * @return
      */
-    public Observable<ResultBase<UserBean>> getUserInfo(String authorization) {
-        return service.getUserInfo(authorization);
+    public Observable<ResultBase<UserBean>> getUserInfo() {
+        return service.getUserInfo(sharedPreferencesHelper.getUserToken());
     }
 
     /**
      * 修改邮箱
      * @param email
-     * @param authorization
      * @return
      */
-    public Observable<ResultBase<String>> updateEmail(String authorization, String email) {
-        return service.updateEmail(authorization,email);
+    public Observable<ResultBase<String>> updateEmail(String email) {
+        return service.updateEmail(sharedPreferencesHelper.getUserToken(), email);
     }
 
     /**
@@ -85,14 +83,12 @@ public class DataManager {
      * @param oldpassword
      * @param newpassword
      * @param confirmpassword
-     * @param authorization
      * @return
      */
     public Observable<ResultBase<String>> updatePassword(String oldpassword,
-                                                  String newpassword,
-                                                  String confirmpassword,
-                                                  String authorization) {
-        return service.updatePassword(oldpassword, newpassword, confirmpassword, authorization);
+                                                         String newpassword,
+                                                         String confirmpassword) {
+        return service.updatePassword(oldpassword, newpassword, confirmpassword, sharedPreferencesHelper.getUserToken());
     }
 
 }

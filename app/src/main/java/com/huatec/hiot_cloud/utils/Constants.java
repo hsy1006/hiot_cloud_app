@@ -36,4 +36,8 @@ public class Constants {
      * 服务端返回消息状态属性成功
      */
     public static final int MSG_STATUS_SUCESS = 1;
+    /**
+     * 网络访问失败吐司
+     */
+    public static final String TOAST_MSG_NETWORK_FAIL = "当前网络无法访问，请稍后再试";
 }

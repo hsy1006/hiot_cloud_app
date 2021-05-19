@@ -1,8 +1,6 @@
 package com.huatec.hiot_cloud.test.networktest;
 
 import android.text.TextUtils;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.huatec.hiot_cloud.data.DataManager;
 import com.huatec.hiot_cloud.ui.base.BasePresenter;
@@ -46,7 +44,7 @@ public class TestNetworkPackPresenter extends BasePresenter<TestNetworkPackView>
      * @param authorization
      */
     public void getUserInfo(String authorization){
-        subscrib(dataManager.getUserInfo(authorization), new RequestCallback<ResultBase<UserBean>>() {
+        subscrib(dataManager.getUserInfo(), new RequestCallback<ResultBase<UserBean>>() {
             @Override
             public void onNext(ResultBase<UserBean> resultBase) {
                 if (resultBase != null && resultBase.getData() != null){
@@ -67,7 +65,7 @@ public class TestNetworkPackPresenter extends BasePresenter<TestNetworkPackView>
      * @param email
      */
     public void updataEmail(String authorization, String email){
-        subscrib(dataManager.updateEmail(authorization, email), new RequestCallback<ResultBase<String>>() {
+        subscrib(dataManager.updateEmail(email), new RequestCallback<ResultBase<String>>() {
             @Override
             public void onNext(ResultBase<String> resultBase) {
                 if (resultBase != null && resultBase.getData() != null){
@@ -108,7 +106,7 @@ public class TestNetworkPackPresenter extends BasePresenter<TestNetworkPackView>
      * @param authorization
      */
     public void updataPassword(String oldpassword, String newpassword, String confirmpassword, String authorization){
-        subscrib(dataManager.updatePassword(oldpassword, newpassword, confirmpassword, authorization), new RequestCallback<ResultBase<String>>() {
+        subscrib(dataManager.updatePassword(oldpassword, newpassword, confirmpassword), new RequestCallback<ResultBase<String>>() {
             @Override
             public void onNext(ResultBase<String> resultBase) {
                 if (resultBase != null && resultBase.getData() != null){

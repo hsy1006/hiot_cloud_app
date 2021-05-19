@@ -20,7 +20,9 @@
         <activity android:name=".test.networktest.TestNetworkPackActivity" />
         <activity android:name=".test.networktest.TestRxJavaActivity" />
         <activity android:name=".test.networktest.TestGsonActivity" />
-        <activity android:name=".test.TestMenuActivity"></activity>
+        <activity android:name=".test.TestMenuActivity">
+
+        </activity>
         <activity android:name=".test.networktest.TestRetrofitActivity" />
         <activity android:name=".test.networktest.TestOkHttpActivity" />
         <activity android:name=".test.lifecycletest.TestLifeCycleActivity" />
@@ -31,7 +33,9 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+
+        </activity>
         <activity android:name=".ui.main.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

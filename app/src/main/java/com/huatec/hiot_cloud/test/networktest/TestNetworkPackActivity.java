@@ -110,47 +110,6 @@ public class TestNetworkPackActivity extends BaseActivity implements TestNetwork
         getActivityComponent().inject(this);
     }
 
-    /**
-     * 登录
-     * @param userName
-     * @param password
-     */
-//    private void login(String userName, String password) {
-//
-//        dataManager.login(userName,password)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .unsubscribeOn(Schedulers.io())
-//                .subscribe(new Observer<ResultBase<LoginResultDTO>>() {
-//                    @Override
-//                    public void onSubscribe(Disposable d) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onNext(ResultBase<LoginResultDTO> resultBase) {
-//                        if (resultBase != null && resultBase.getData() != null){
-//                            etToken.setText(resultBase.getData().getTokenValue());
-//                            Toast.makeText(TestNetworkPackActivity.this, resultBase.getMsg(), Toast.LENGTH_SHORT).show();
-//                            Log.d(TAG, "onNext: " + resultBase.getMsg());
-//                        }
-//                        else if (resultBase != null && !TextUtils.isEmpty(resultBase.getMsg())){
-//                            Toast.makeText(TestNetworkPackActivity.this, resultBase.getMsg(), Toast.LENGTH_SHORT).show();
-//                            Log.d(TAG, "onNext: " + resultBase.getMsg());
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable e) {
-//                        Log.e(TAG, "onError: " + e.getMessage(),e);
-//                    }
-//
-//                    @Override
-//                    public void onComplete() {
-//
-//                    }
-//                });
-//    }
 
     @Override
     public void showToken(String token) {
