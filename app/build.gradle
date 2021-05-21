@@ -73,4 +73,12 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
 
+    //获取系统权限框架ACP
+    implementation 'com.mylhyl:acp:1.1.7'
+
+    //图片选择框架
+    //https://github.com/LuckSiege/PictureSelector
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.9'
+//    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.9'
+
 }

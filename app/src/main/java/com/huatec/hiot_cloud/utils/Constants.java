@@ -40,4 +40,8 @@ public class Constants {
      * 网络访问失败吐司
      */
     public static final String TOAST_MSG_NETWORK_FAIL = "当前网络无法访问，请稍后再试";
+    /**
+     * form-data类型
+     */
+    public static final String MULTIPART_FORM_DATA = "multipart/form-data";
 }
