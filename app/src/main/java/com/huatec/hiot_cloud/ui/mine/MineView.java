@@ -20,4 +20,9 @@ public interface MineView extends BaseView {
      * @param url
      */
     void refreshUserHead(String url);
+
+    /**
+     * 重新登录的处理
+     */
+    void tokenOut();
 }

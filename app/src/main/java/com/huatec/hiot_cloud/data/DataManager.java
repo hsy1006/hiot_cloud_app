@@ -107,4 +107,17 @@ public class DataManager {
         MultipartBody.Part multipartFile = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
         return service.uploadImage(multipartFile, sharedPreferencesHelper.getUserToken());
     }
+
+    /**
+     * 注销
+     */
+    public Observable<ResultBase> logout() {
+        return service.logout(sharedPreferencesHelper.getUserToken())
+                .doOnNext(new Consumer<ResultBase>() {
+                    @Override
+                    public void accept(ResultBase resultBase) throws Exception {
+                        sharedPreferencesHelper.setUserToken("");
+                    }
+                });
+    }
 }
