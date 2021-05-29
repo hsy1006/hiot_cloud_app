@@ -26,6 +26,7 @@ import com.huatec.hiot_cloud.ui.main.MainActivity;
 import com.huatec.hiot_cloud.ui.main.SplashActivity;
 import com.huatec.hiot_cloud.ui.mine.MineFragment;
 import com.huatec.hiot_cloud.ui.register.RegisterActivity;
+import com.huatec.hiot_cloud.ui.scan.ScanActivity;
 
 import dagger.Component;
 
@@ -54,6 +55,8 @@ public interface ActivityComponent {
     void inject(RegisterActivity registerActivity);
 
     void inject(MineFragment mineFragment);
+
+    void inject(ScanActivity scanActivity);
 
 
     @Component.Builder

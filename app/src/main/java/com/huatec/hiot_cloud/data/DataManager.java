@@ -120,4 +120,14 @@ public class DataManager {
                     }
                 });
     }
+
+    /**
+     * 设备绑定
+     *
+     * @param deviceId
+     * @return
+     */
+    public Observable<ResultBase> bindDevice(String deviceId) {
+        return service.bindDevice(deviceId, sharedPreferencesHelper.getUserToken());
+    }
 }
