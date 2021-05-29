@@ -8,12 +8,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!--允许程序访问WiFi网络信息-->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!--使用照相机权限-->
+    <!--照相机权限-->
     <uses-permission android:name="android.permission.CAMERA" />
-    <!-- 写存储卡 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE " />
-    <!-- 读存储卡 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE " />
+    <!--SD卡读写权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 
     <application
@@ -24,8 +23,8 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:theme"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme.NoActionBar"
+        tools:replace="android:theme">
 
         <activity android:name=".ui.register.RegisterActivity"></activity>
         <activity android:name=".test.glidetest.TestGlideActivity" />

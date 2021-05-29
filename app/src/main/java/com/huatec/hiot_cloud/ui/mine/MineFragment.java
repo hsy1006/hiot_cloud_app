@@ -129,21 +129,19 @@ public class MineFragment extends BaseFragment<MineView, MinePresenter> implemen
     private void checkPermission() {
         Acp.getInstance(getActivity()).request(
                 new AcpOptions.Builder().setPermissions(
+                        Manifest.permission.CAMERA,
                         Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.CAMERA
-
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
                 ).build(),
                 new AcpListener() {
                     @Override
                     public void onGranted() {
-                        //用户同意授权，选择图片
+                        //用户同意授权，选择相册图片
                         ChoosePicture();
                     }
 
                     @Override
                     public void onDenied(List<String> permissions) {
-                        //用户不同意授权，吐司
                         showMessage("用户拒绝授权");
                     }
                 }

@@ -34,6 +34,12 @@ public interface NetworkService {
                                                  @Query("password")String password,
                                                  @Query("loginCode")String loginCode);
 
+    /**
+     * 退出登录
+     *
+     * @param authorization
+     * @return
+     */
     @POST("/auth/logout")
     Observable<ResultBase> logout(@Header("Authorization") String authorization);
 
