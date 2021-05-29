@@ -11,4 +11,9 @@ public interface BaseView {
      * @param message
      */
     void showMessage(String message);
+
+    /**
+     * token失效的处理
+     */
+    void tokenOut();
 }
