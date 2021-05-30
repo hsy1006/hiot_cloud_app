@@ -1,8 +1,11 @@
 package com.huatec.hiot_cloud.data;
 
+import com.huatec.hiot_cloud.data.bean.DeviceBean;
+import com.huatec.hiot_cloud.data.bean.UserBean;
 import com.huatec.hiot_cloud.test.networktest.LoginResultDTO;
 import com.huatec.hiot_cloud.test.networktest.ResultBase;
-import com.huatec.hiot_cloud.test.networktest.UserBean;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
@@ -106,4 +109,16 @@ public interface NetworkService {
     @POST("/holder/device/{device_pk}")
     Observable<ResultBase> bindDevice(@Path("device_pk") String device_pk,
                                       @Header("Authorization") String authorization);
+
+    /**
+     * 获取设备列表
+     *
+     * @param bonding
+     * @param authorization
+     * @return
+     */
+    @GET("/holder/user")
+    Observable<ResultBase<List<DeviceBean>>> listBindedDevice(@Query("bonding") int bonding,
+                                                              @Header("Authorization") String authorization);
+
 }

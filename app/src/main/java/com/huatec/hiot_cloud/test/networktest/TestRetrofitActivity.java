@@ -1,7 +1,5 @@
 package com.huatec.hiot_cloud.test.networktest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,9 +8,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.huatec.hiot_cloud.R;
+import com.huatec.hiot_cloud.data.bean.UserBean;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

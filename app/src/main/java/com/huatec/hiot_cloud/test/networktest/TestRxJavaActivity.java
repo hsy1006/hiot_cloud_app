@@ -1,7 +1,5 @@
 package com.huatec.hiot_cloud.test.networktest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -10,8 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.data.NetworkService;
+import com.huatec.hiot_cloud.data.bean.UserBean;
 import com.huatec.hiot_cloud.utils.Constants;
 
 import io.reactivex.Observable;
