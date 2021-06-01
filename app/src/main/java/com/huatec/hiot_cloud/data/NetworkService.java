@@ -1,6 +1,7 @@
 package com.huatec.hiot_cloud.data;
 
 import com.huatec.hiot_cloud.data.bean.DeviceBean;
+import com.huatec.hiot_cloud.data.bean.DeviceDetailBean;
 import com.huatec.hiot_cloud.data.bean.UserBean;
 import com.huatec.hiot_cloud.test.networktest.LoginResultDTO;
 import com.huatec.hiot_cloud.test.networktest.ResultBase;
@@ -120,5 +121,29 @@ public interface NetworkService {
     @GET("/holder/user")
     Observable<ResultBase<List<DeviceBean>>> listBindedDevice(@Query("bonding") int bonding,
                                                               @Header("Authorization") String authorization);
+
+    /**
+     * 获取设备详情
+     *
+     * @param deviceId
+     * @param authorization
+     * @return
+     */
+    @GET("/device/{id}")
+    Observable<ResultBase<DeviceDetailBean>> getDeviceDetail(@Path("id") String deviceId,
+                                                             @Header("Authorization") String authorization);
+
+    /**
+     * 控制通道开关
+     *
+     * @param downdatastream_pk
+     * @param status
+     * @param authorization
+     * @return
+     */
+    @POST("/downdatastream/switch/{downdatastream_pk}")
+    Observable<ResultBase> changeSwitch(@Path("downdatastream_pk") String downdatastream_pk,
+                                        @Query("status") int status,
+                                        @Header("Authorization") String authorization);
 
 }

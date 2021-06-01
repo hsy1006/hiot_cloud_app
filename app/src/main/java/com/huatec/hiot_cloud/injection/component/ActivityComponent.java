@@ -21,6 +21,7 @@ import com.huatec.hiot_cloud.injection.module.ActivityModule;
 import com.huatec.hiot_cloud.test.mvptest.GuessActivity;
 import com.huatec.hiot_cloud.test.mvptest.TestMVPActivity;
 import com.huatec.hiot_cloud.test.networktest.TestNetworkPackActivity;
+import com.huatec.hiot_cloud.ui.devicedetail.DeviceDetailActivity;
 import com.huatec.hiot_cloud.ui.devicelist.DeviceListFragment;
 import com.huatec.hiot_cloud.ui.login.LoginActivity;
 import com.huatec.hiot_cloud.ui.main.MainActivity;
@@ -60,6 +61,8 @@ public interface ActivityComponent {
     void inject(ScanActivity scanActivity);
 
     void inject(DeviceListFragment deviceListFragment);
+
+    void inject(DeviceDetailActivity deviceDetailActivity);
 
 
     @Component.Builder
