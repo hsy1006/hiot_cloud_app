@@ -115,24 +115,6 @@ public class ScanActivity extends BaseActivity<ScanView, ScanPresenter> implemen
 
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == Activity.RESULT_CANCELED) {
-            showMessage("用户取消");
-        }
-        if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == PictureConfig.CHOOSE_REQUEST) {
-                List<LocalMedia> ImageList = PictureSelector.obtainMultipleResult(data);
-                if (ImageList != null && !ImageList.isEmpty()) {
-                    String filePath = ImageList.get(0).getCompressPath();
-                    String deviceId = CodeUtils.parseCode(filePath);
-                    presenter.bindDevice(deviceId);
-                }
-            }
-        }
-    }
-
     /**
      * 打开图片选择
      */
@@ -180,6 +162,25 @@ public class ScanActivity extends BaseActivity<ScanView, ScanPresenter> implemen
                 .isDragFrame(false)// 是否可拖动裁剪框(固定)
                 .forResult(PictureConfig.CHOOSE_REQUEST);
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_CANCELED) {
+            showMessage("用户取消");
+        }
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == PictureConfig.CHOOSE_REQUEST) {
+                List<LocalMedia> ImageList = PictureSelector.obtainMultipleResult(data);
+                if (ImageList != null && !ImageList.isEmpty()) {
+                    String filePath = ImageList.get(0).getCompressPath();
+                    String deviceId = CodeUtils.parseCode(filePath);
+                    presenter.bindDevice(deviceId);
+                }
+            }
+        }
+    }
+
 
     /**
      * 初始化控件
